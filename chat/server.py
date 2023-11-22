@@ -39,6 +39,6 @@ while True:
         rooms[living_room] = []
     rooms[living_room].append(client)
     print(f"{name} is conected in the living room {living_room}! INFO: {addr}")
-    broadcast(living_room, f'{name} is online! ')
+    broadcast(living_room, f'{name} Online!')
     thread = threading.Thread(target=sendMenssage, args=(name, living_room, client))
     thread.start()
