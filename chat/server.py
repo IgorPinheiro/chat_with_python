@@ -31,7 +31,7 @@ def sendMenssage(name, living_room, client):
 # Creating a while True for a infiniti connection, and send some words
 while True:
     client, addr = server.accept()
-    client.send(b'SALA')
+    client.send(b'ROOM')
     name = client.recv(1024).decode()
     living_room = client.recv(1024).decode()
     
