@@ -24,7 +24,7 @@ def broadcast(living_room, menssage):
 def sendMenssage(name, living_room, client):
     while True:
         menssage = client.recv(1024)
-        menssage = f'{name}: {message.decode()}\n'
+        menssage = f'{name}: {menssage.decode()}\n'
         broadcast(living_room, menssage)
 
 
@@ -39,6 +39,6 @@ while True:
         rooms[living_room] = []
     rooms[living_room].append(client)
     print(f"{name} is conected in the living room {living_room}! INFO: {addr}")
-    broadcast(living_room, f'{name} Online!')
+    broadcast(living_room, f'{name} is Online!\n')
     thread = threading.Thread(target=sendMenssage, args=(name, living_room, client))
     thread.start()
